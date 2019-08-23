@@ -1,0 +1,38 @@
+{
+  "name": "@earthtone/vue-sheet-provider",
+  "version": "0.0.1",
+  "description": "Data Provider Vue Component for Google Sheets using Sheetsy",
+  "main": "dist/vue-sheet-provider.ssr.js",
+  "module": "dist/vue-sheet-provider.esm.js",
+  "unpkg": "dist/vue-sheet-provider.min.js",
+  "browser": {
+    "./sfc": "src/entry.js"
+  },
+  "files": [
+    "dist/*",
+    "src/**/*.vue",
+    "!src/lib-dev.vue"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+  },
+  "dependencies": {
+    "sheetsy": "^2.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "minimist": "^1.2.0",
+    "rollup": "^1.12.1",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^4.0.4",
+    "rollup-plugin-vue": "^5.0.0",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
